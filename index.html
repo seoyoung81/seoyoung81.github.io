@@ -12,41 +12,67 @@
         height: 80vw;
         max-width: 600px;
         max-height: 600px;
+        margin: auto;
       }
       .tabs {
         width: 80vw;
-        background-color: pink;
+        max-width: 600px;
+        font-size: 0;
+        margin: auto;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
       }
-      label {
-        width: 20vw;
-        width: 100px;
-        border: 1px solid black;
+      .tabs label {
+        display: inline-block;
+        background-color: pink;
+        width: 25%;
         font-size: 15px;
         cursor: pointer;
+        text-align: center;
+        box-shadow: 0 0 0 2px inset hotpink;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+      }
+      .tabs input:checked + label {
+        background-color: hotpink;
+        color: white;
       }
     </style>
   </head>
   <body>
-
     <h1>자바스크립트 공부</h1>
-
-    <section id="content">내용이 여기에 로드됩니다.</section>
-
     <div class="tabs">
-      <input type="radio" id="todo" name="option" hidden onclick="loadHtml('todo.html')">
-        <label for="" >투두리스트</label>
-      </input>
-      <input type="radio" id="calendar" name="option" hidden onclick="loadHtml('calendar.html')">
-        <label for="" >달력</label>
-      </input>
-      <input type="radio" id="calculator" name="option" hidden onclick="loadHtml('calculator.html')">
-        <label for="" >계산기</label>
-      </input>
-      <input type="radio" id="quiz" name="option" hidden onclick="loadHtml('quiz.html')">
-        <label for="" >퀴즈</label>
-      </input>
+      <input type="radio" id="todo" name="option" hidden />
+      <label for="todo" onclick="loadHtml('todo.html')">투두리스트</label>
+      <input
+        type="radio"
+        id="calendar"
+        name="option"
+        hidden
+        onclick="loadHtml('calendar.html')"
+      />
+      <label for="calendar" onclick="loadHtml('calendar.html')">달력</label>
+      <input
+        type="radio"
+        id="calculator"
+        name="option"
+        hidden
+        onclick="loadHtml('calculator.html')"
+      />
+      <label for="calculator" onclick="loadHtml('calculator.html')"
+        >계산기</label
+      >
+      <input
+        type="radio"
+        id="quiz"
+        name="option"
+        hidden
+        onclick="loadHtml('quiz.html')"
+      />
+      <label for="quiz" onclick="loadHtml('quiz.html')">퀴즈</label>
     </div>
 
+    <section id="content">내용이 여기에 로드됩니다.</section>
   </body>
   <script>
     // html 불러오기
