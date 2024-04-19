@@ -1,12 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <h1>나의 블로그</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      section {
+        background-color: rgb(251, 225, 230);
+        border-radius: 5px;
+        width: 80vw;
+        height: 80vw;
+        max-width: 600px;
+        max-height: 600px;
+      }
+      .tabs {
+        width: 80vw;
+        background-color: pink;
+      }
+      label {
+        width: 20vw;
+        width: 100px;
+        border: 1px solid black;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1>자바스크립트 공부</h1>
+
+    <section id="content">내용이 여기에 로드됩니다.</section>
+
+    <div class="tabs">
+      <input type="radio" id="todo" name="option" hidden onclick="loadHtml('todo.html')">
+        <label for="" >투두리스트</label>
+      </input>
+      <input type="radio" id="calendar" name="option" hidden onclick="loadHtml('calendar.html')">
+        <label for="" >달력</label>
+      </input>
+      <input type="radio" id="calculator" name="option" hidden onclick="loadHtml('calculator.html')">
+        <label for="" >계산기</label>
+      </input>
+      <input type="radio" id="quiz" name="option" hidden onclick="loadHtml('quiz.html')">
+        <label for="" >퀴즈</label>
+      </input>
+    </div>
+
+  </body>
+  <script>
+    // html 불러오기
+    function loadHtml(filename) {
+      // 웹 서버로부터 데이터를 비동기적으로 요청하고 받아온다.
+      var xhr = new XMLHttpRequest();
+      console.log("xhr", xhr);
+      xhr.open("GET", filename, true);
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          document.getElementById("content").innerHTML = xhr.responseText;
+        }
+      };
+      xhr.send();
+    }
+  </script>
 </html>
