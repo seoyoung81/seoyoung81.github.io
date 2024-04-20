@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
     <style>
+      body {
+        font-family: "Roboto", "Noto Sans KR", sans-serif;
+      }
+      
       h1 {
         display: flex;
         justify-content: center;
@@ -22,26 +33,33 @@
       .tabs {
         width: 80vw;
         max-width: 600px;
+        display: flex;
+        flex-direction: row;
         font-size: 0;
         margin: auto;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
       }
       .tabs label {
-        display: inline-block;
-        height: 3vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: pink;
+        height: 3vw;
+        max-height: 40px;
         width: 25%;
         font-size: 15px;
         cursor: pointer;
         text-align: center;
-        box-shadow: 0 0 0 2px inset hotpink;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
       }
       .tabs input:checked + label {
         background-color: hotpink;
         color: white;
+      }
+      .g {
+        font-family: Georgia, "맑은 고딕", serif;
       }
     </style>
   </head>
