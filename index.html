@@ -14,16 +14,15 @@
     <style>
       body {
         font-family: "Roboto", "Noto Sans KR", sans-serif;
+        margin-top: 50px;
       }
-
-      h1 {
-        display: flex;
-        justify-content: center;
-      }
-
       section {
-        background-color: rgb(251, 225, 230);
-        border-radius: 0px 0px 5px 5px;
+        border-bottom: 3px solid #188ade;
+        border-left: 3px solid #188ade;
+        border-right: 3px solid #188ade;
+        /* border 속성을 box 사이즈에 맞추고 싶은 경우 */
+        box-sizing: border-box;
+        border-radius: 0px 0px 20px 20px;
         width: 80vw;
         height: 80vw;
         max-width: 600px;
@@ -37,39 +36,54 @@
         flex-direction: row;
         font-size: 0;
         margin: auto;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
       }
       .tabs label {
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: pink;
-        height: 4vw;
+        background-color: #abd4ff;
+        border: 1px black;
+        color: #fddaf8;
+        font-weight: 500;
+        letter-spacing: 2px;
+        height: 5vw;
         max-height: 40px;
-        width: 25%;
-        font-size: 15px;
+        font-size: 16px;
         cursor: pointer;
         text-align: center;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
         text-transform: uppercase;
       }
+      .tabs .general {
+        width: 25%;
+      }
+      .tabs .index {
+        width: 15%;
+      }
       .tabs input:checked + label {
-        background-color: hotpink;
+        background-color: #188ade;
         color: white;
         box-shadow: inset;
       }
-      .g {
-        font-family: Georgia, "맑은 고딕", serif;
+      section div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
       }
     </style>
   </head>
   <body>
-    <h1>자바스크립트 공부</h1>
     <div class="tabs">
+      <input type="radio" id="index" name="option" hidden checked />
+      <label for="index" class="index" onClick="location.reload()">home</label>
       <input type="radio" id="todo" name="option" hidden />
-      <label for="todo" onclick="loadHtml('todo.html')">todo</label>
+      <label for="todo" class="general" onclick="loadHtml('todo.html')"
+        >todo</label
+      >
       <input
         type="radio"
         id="calendar"
@@ -77,7 +91,9 @@
         hidden
         onclick="loadHtml('calendar.html')"
       />
-      <label for="calendar" onclick="loadHtml('calendar.html')">calendar</label>
+      <label for="calendar" class="general" onclick="loadHtml('calendar.html')"
+        >calendar</label
+      >
       <input
         type="radio"
         id="calculator"
@@ -85,7 +101,10 @@
         hidden
         onclick="loadHtml('calculator.html')"
       />
-      <label for="calculator" onclick="loadHtml('calculator.html')"
+      <label
+        for="calculator"
+        class="general"
+        onclick="loadHtml('calculator.html')"
         >calculator</label
       >
       <input
@@ -95,10 +114,12 @@
         hidden
         onclick="loadHtml('quiz.html')"
       />
-      <label for="quiz" onclick="loadHtml('quiz.html')">quiz</label>
+      <label for="quiz" class="general" onclick="loadHtml('quiz.html')"
+        >quiz</label
+      >
     </div>
 
-    <section id="content">내용이 여기에 로드됩니다.</section>
+    <section id="content">여기에 내용이 표시된다.</section>
   </body>
   <script>
     // html 불러오기
