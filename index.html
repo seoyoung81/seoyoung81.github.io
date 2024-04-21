@@ -15,7 +15,7 @@
       body {
         font-family: "Roboto", "Noto Sans KR", sans-serif;
       }
-      
+
       h1 {
         display: flex;
         justify-content: center;
@@ -23,7 +23,7 @@
 
       section {
         background-color: rgb(251, 225, 230);
-        border-radius: 5px;
+        border-radius: 0px 0px 5px 5px;
         width: 80vw;
         height: 80vw;
         max-width: 600px;
@@ -45,7 +45,7 @@
         justify-content: center;
         align-items: center;
         background-color: pink;
-        height: 3vw;
+        height: 4vw;
         max-height: 40px;
         width: 25%;
         font-size: 15px;
@@ -53,10 +53,12 @@
         text-align: center;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+        text-transform: uppercase;
       }
       .tabs input:checked + label {
         background-color: hotpink;
         color: white;
+        box-shadow: inset;
       }
       .g {
         font-family: Georgia, "맑은 고딕", serif;
@@ -64,10 +66,10 @@
     </style>
   </head>
   <body>
-    <h1>자바스크립트 공부부</h1>
+    <h1>자바스크립트 공부</h1>
     <div class="tabs">
       <input type="radio" id="todo" name="option" hidden />
-      <label for="todo" onclick="loadHtml('todo.html')">투두리스트</label>
+      <label for="todo" onclick="loadHtml('todo.html')">todo</label>
       <input
         type="radio"
         id="calendar"
@@ -75,7 +77,7 @@
         hidden
         onclick="loadHtml('calendar.html')"
       />
-      <label for="calendar" onclick="loadHtml('calendar.html')">달력</label>
+      <label for="calendar" onclick="loadHtml('calendar.html')">calendar</label>
       <input
         type="radio"
         id="calculator"
@@ -84,7 +86,7 @@
         onclick="loadHtml('calculator.html')"
       />
       <label for="calculator" onclick="loadHtml('calculator.html')"
-        >계산기</label
+        >calculator</label
       >
       <input
         type="radio"
@@ -93,7 +95,7 @@
         hidden
         onclick="loadHtml('quiz.html')"
       />
-      <label for="quiz" onclick="loadHtml('quiz.html')">퀴즈</label>
+      <label for="quiz" onclick="loadHtml('quiz.html')">quiz</label>
     </div>
 
     <section id="content">내용이 여기에 로드됩니다.</section>
